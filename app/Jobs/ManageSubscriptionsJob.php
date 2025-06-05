@@ -13,6 +13,8 @@ use App\Mail\SubscriptionReminder;
 use App\Models\JobLog;
 use Illuminate\Support\Facades\Mail;
 
+
+
 class ManageSubscriptionsJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
