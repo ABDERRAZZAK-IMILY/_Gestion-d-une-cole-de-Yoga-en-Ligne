@@ -24,3 +24,8 @@ Route::middleware('auth:sanctum')->group(function () {
 use App\Http\Controllers\AuthController;
 Route::post('/register', [AuthController::class, 'Register']);
 Route::post('/login', [AuthController::class, 'Login']);
+
+
+use App\Http\Controllers\WooWebhookController;
+
+Route::post('/woo', [WooWebhookController::class, 'handle']);
