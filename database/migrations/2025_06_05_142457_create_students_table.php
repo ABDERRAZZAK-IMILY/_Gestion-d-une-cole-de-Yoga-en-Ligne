@@ -9,13 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('students', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+   public function up()
+{
+    Schema::create('students', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('email')->unique();
+        $table->date('subscription_expires_at')->nullable();
+        $table->enum('status', ['active', 'archived'])->default('active');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
