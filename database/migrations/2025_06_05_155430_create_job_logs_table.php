@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_logs', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+       Schema::create('job_logs', function (Blueprint $table) {
+      $table->id();
+      $table->string('action');
+      $table->text('details')->nullable();
+      $table->timestamps();
+});
+
     }
 
     /**
