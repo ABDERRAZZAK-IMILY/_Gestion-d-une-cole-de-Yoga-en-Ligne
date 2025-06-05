@@ -19,3 +19,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('students', StudentController::class);
     Route::apiResource('subscriptions', SubscriptionController::class);
 });
+
+
+use App\Http\Controllers\AuthController;
+Route::post('/register', [AuthController::class, 'Register']);
+Route::post('/login', [AuthController::class, 'Login']);
